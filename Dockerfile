@@ -10,6 +10,7 @@ RUN apt-get -q update && apt-get install -qy --force-yes unifi=5.3.8-8920 && apt
 
 EXPOSE 8080/tcp 8081/tcp 8443/tcp 8843/tcp 8880/tcp 3478/udp
 VOLUME ["/var/lib/unifi"]
+VOLUME ["/usr/lib/unifi/data"]
 WORKDIR /var/lib/unifi
 
 CMD java -Xms1024M -jar /usr/lib/unifi/lib/ace.jar start
